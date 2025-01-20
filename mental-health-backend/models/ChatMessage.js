@@ -8,4 +8,8 @@ const chatMessageSchema = new mongoose.Schema({
 });
 
 const ChatMessage = mongoose.model('ChatMessage', chatMessageSchema);
+
+// // Set TTL index (e.g., messages expire after 7 days)
+// chatMessageSchema.index({ timestamp: 1 }, { expireAfterSeconds: 604800 }); // 7 days in seconds
+
 export default ChatMessage;

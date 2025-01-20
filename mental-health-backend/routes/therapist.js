@@ -5,12 +5,12 @@ import authenticate from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
-// Search therapists by name, specialization, or location
 router.get('/search', authenticate, async (req, res) => {
     const { name, specialization, location } = req.query;
 
+    // Construct filter dynamically
     const filter = {};
-    if (name) filter.name = { $regex: name, $options: 'i' }; // Case-insensitive search
+    if (name) filter.name = { $regex: name, $options: 'i' };
     if (specialization) filter.specialization = { $regex: specialization, $options: 'i' };
     if (location) filter.location = { $regex: location, $options: 'i' };
 
@@ -18,6 +18,7 @@ router.get('/search', authenticate, async (req, res) => {
         const therapists = await Therapist.find(filter);
         res.status(200).json(therapists);
     } catch (err) {
+        console.error('Error fetching therapists:', err.message);
         res.status(500).json({ error: 'Error fetching therapists' });
     }
 });
@@ -59,6 +60,20 @@ router.post('/appointment', authenticate, async (req, res) => {
         res.status(200).json({ message: 'Appointment request sent successfully' });
     } catch (err) {
         res.status(500).json({ error: 'Error sending appointment request' });
+    }
+});
+
+router.get('/:id', authenticate, async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const therapist = await Therapist.findById(id);
+        if (!therapist) {
+            return res.status(404).json({ message: 'Therapist not found' });
+        }
+        res.status(200).json(therapist);
+    } catch (err) {
+        res.status(500).json({ error: 'Error fetching therapist details' });
     }
 });
 

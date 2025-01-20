@@ -7,13 +7,20 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true },
 });
 
-// Hash the password before saving
+
+// Hash the password before saving the user model
 userSchema.pre('save', async function (next) {
-    if (this.isModified('password')) {
-        this.password = await bcrypt.hash(this.password, 10);
+    try {
+        if (this.isModified('password')) {
+            this.password = await bcrypt.hash(this.password, 10);
+        }
+        next();
+    } catch (err) {
+        console.error('Error hashing password:', err.message);
+        next(err); // Pass the error to the next middleware
     }
-    next();
 });
+
 
 const User = mongoose.model('User', userSchema);
 export default User;

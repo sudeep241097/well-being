@@ -20,6 +20,13 @@ const seedTherapists = async () => {
             phone: "123-456-7890",
         },
         {
+            name: "Dr. John Smith",
+            specialization: "Depression",
+            location: "New York",
+            email: "sudeepkatari8857@gmail.com",
+            phone: "123-456-7890",
+        },
+        {
             name: "Dr. Emily Davis",
             specialization: "Depression",
             location: "California",

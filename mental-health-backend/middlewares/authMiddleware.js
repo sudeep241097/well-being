@@ -14,8 +14,10 @@ const authenticate = (req, res, next) => {
         req.user = decoded;
         next();
     } catch (err) {
-        res.status(400).send('Invalid token');
+        console.error('Invalid token:', err.message);
+        res.status(400).send('Invalid or expired token.');
     }
 };
+
 
 export default authenticate;
