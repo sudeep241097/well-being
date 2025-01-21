@@ -28,11 +28,7 @@ const seedRelaxation = async () => {
             title: "Progressive Muscle Relaxation Exercise",
             description: "Step-by-step instructions for reducing muscle tension.",
             type: "Breathing Exercise",
-            instructions: `
-                1. Find a comfortable position.
-                2. Start with your toes: tense them for 5 seconds, then release.
-                3. Move to your calves, thighs, and upward through your body.
-                4. Focus on the release of tension as you relax each muscle group.
+            instructions: `1. Find a comfortable position.\n2. Start with your toes: tense them for 5 seconds, then release.\n3. Move to your calves, thighs, and upward through your body.\n4. Focus on the release of tension as you relax each muscle group.\n
             `,
         },
         {
@@ -45,11 +41,7 @@ const seedRelaxation = async () => {
             title: "4-7-8 Breathing Technique",
             description: "A simple breathing exercise for relaxation and better sleep.",
             type: "Breathing Exercise",
-            instructions: `
-                1. Inhale deeply through your nose for 4 seconds.
-                2. Hold your breath for 7 seconds.
-                3. Exhale slowly through your mouth for 8 seconds.
-                4. Repeat this cycle 4-5 times.
+            instructions: `1. Inhale deeply through your nose for 4 seconds.\n2. Hold your breath for 7 seconds.\n3. Exhale slowly through your mouth for 8 seconds.\n4. Repeat this cycle 4-5 times.\n
             `,
         },
         {
@@ -80,11 +72,7 @@ const seedRelaxation = async () => {
             title: "Daily Gratitude Practice",
             description: "Simple instructions for a daily gratitude practice to promote positivity.",
             type: "Breathing Exercise",
-            instructions: `
-                1. Sit comfortably in a quiet space.
-                2. Close your eyes and take 3 deep breaths.
-                3. Reflect on 3 things you're grateful for today.
-                4. Write them down in a journal or simply say them aloud.
+            instructions: `1. Sit comfortably in a quiet space.\n2. Close your eyes and take 3 deep breaths.\n3. Reflect on 3 things you're grateful for today.\n4. Write them down in a journal or simply say them aloud.
             `,
         },
     ];

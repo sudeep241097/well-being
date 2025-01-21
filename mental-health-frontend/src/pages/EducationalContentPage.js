@@ -44,6 +44,7 @@ const EducationalContentPage = () => {
 
   return (
     <PageContainer>
+      <h1>Educational Content</h1>
       {loading ? (
         <p>Loading educational content...</p>
       ) : error ? (

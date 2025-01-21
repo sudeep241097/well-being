@@ -6,7 +6,7 @@ const EducationalContentCard = ({ item }) => {
     <Card>
       <h3>{item.title}</h3>
       <p>{item.description}</p>
-      <p>{item.content}</p>
+      <pre>{item.content}</pre>
       {item.link && (
         <a href={item.link} target="_blank" rel="noopener noreferrer">
           View More
