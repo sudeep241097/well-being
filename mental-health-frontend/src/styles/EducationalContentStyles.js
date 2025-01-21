@@ -7,7 +7,7 @@ export const PageContainer = styled.div`
 
    h1 {
     font-size: 28px;
-    color: #4caf50;
+    color: #2d6a4f;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -47,7 +47,7 @@ export const Card = styled.div`
     display: inline-block;
     margin-top: 10px;
     font-size: 14px;
-    color: #4caf50;
+    color: #2d6a4f;
     text-decoration: none;
   }
 

@@ -11,7 +11,7 @@ export const ChatRoomListContainer = styled.div`
 
   h1 {
     font-size: 32px;
-    color: #4caf50;
+    color: #2d6a4f;
     font-weight: bold;
     margin-bottom: 30px;
     text-shadow: 1px 1px 1px #ccc;
@@ -24,7 +24,7 @@ export const ChatRoomButton = styled.button`
   font-size: 20px;
   font-weight: bold;
   color: #fff;
-  background: #4caf50;
+  background: #2d6a4f;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -44,7 +44,7 @@ export const ChatWindowContainer = styled.div`
 
   h1 {
     font-size: 32px;
-    color: #4caf50;
+    color: #2d6a4f;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
@@ -66,7 +66,7 @@ export const MessagesContainer = styled.div`
     width: 8px;
   }
   &::-webkit-scrollbar-thumb {
-    background: #4caf50;
+    background: #2d6a4f;
     border-radius: 4px;
   }
 `;
@@ -79,7 +79,7 @@ export const Message = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   strong {
-    color: #4caf50;
+    color: #2d6a4f;
     font-weight: bold;
   }
 
@@ -115,7 +115,7 @@ export const MessageInputContainer = styled.div`
 
   button {
     padding: 12px 24px;
-    background-color: #4caf50;
+    background-color: #2d6a4f;
     color: #fff;
     border: none;
     border-radius: 5px;

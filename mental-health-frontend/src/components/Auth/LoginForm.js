@@ -26,7 +26,7 @@ const LoginForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2>Login</h2>
+            <h2 style={{ color: "#2d6a4f" }}>Login</h2>
             <input
                 type="email"
                 placeholder="Email"

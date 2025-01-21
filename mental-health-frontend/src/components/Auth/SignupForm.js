@@ -26,7 +26,7 @@ const SignupForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2>Sign Up</h2>
+            <h2 style={{ color: "#2d6a4f" }}>Sign Up</h2>
             <input
                 type="text"
                 placeholder="Name"

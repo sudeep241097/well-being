@@ -19,7 +19,7 @@ export const SearchButton = styled.button`
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
-  background: #4caf50;
+  background: #2d6a4f;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -48,7 +48,7 @@ export const TherapistDetails = styled.div`
   margin-bottom: 10px;
 
   h3 {
-    color: #4caf50;
+    color: #2d6a4f;
   }
 `;
 
@@ -56,7 +56,7 @@ export const AppointmentButton = styled.button`
   padding: 10px 15px;
   font-size: 14px;
   color: #fff;
-  background: #4caf50;
+  background: #2d6a4f;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -84,7 +84,7 @@ export const TherapistHeader = styled.div`
   border: 1px solid #ccc;
 
   h2 {
-    color: #4caf50;
+    color: #2d6a4f;
     font-size: 24px;
     margin-bottom: 5px;
   }
@@ -107,7 +107,7 @@ export const AppointmentFormContainer = styled.div`
 
 export const FormTitle = styled.h1`
   text-align: center;
-  color: #4caf50; /* Consistent with the app's color palette */
+  color: #2d6a4f; /* Consistent with the app's color palette */
   margin-bottom: 30px;
   font-family: "Arial", sans-serif;
   font-weight: 600;
@@ -135,7 +135,7 @@ export const FormInput = styled.input`
   border-radius: 5px;
 
   &:focus {
-    border-color: #4caf50;
+    border-color: #2d6a4f;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
     outline: none;
   }
@@ -143,7 +143,7 @@ export const FormInput = styled.input`
 
 export const SubmitButton = styled.button`
   padding: 12px 25px;
-  background: #4caf50; /* Consistent green color */
+  background: #2d6a4f; /* Consistent green color */
   color: white;
   border: none;
   border-radius: 8px;

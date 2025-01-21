@@ -70,7 +70,7 @@ const JournalList = () => {
       <div style={{ textAlign: "center", margin: "20px 0" }}>
         <Button
           style={{
-            background: "#4caf50",
+            background: "#2d6a4f",
             color: "#fff",
             fontSize: "16px",
           }}
