@@ -33,7 +33,7 @@ const TherapistSearchPage = () => {
 
   return (
     <div style={{ padding: "20px", background: "#e9f7ef", minHeight: "100vh" }}>
-      <h1 style={{ textAlign: "center", color: "#4caf50", marginBottom: "20px" }}>
+      <h1 style={{ textAlign: "center", color: "#2d6a4f", marginBottom: "20px" }}>
         Therapist Search
       </h1>
       {error && <p style={{ textAlign: "center", color: "red" }}>{error}</p>}

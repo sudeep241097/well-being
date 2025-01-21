@@ -30,7 +30,7 @@ export const AuthCard = styled.div`
         transition: border-color 0.3s ease;
 
         &:focus {
-            border-color: #4caf50;
+            border-color: #2d6a4f;
         }
     }
 
@@ -53,13 +53,13 @@ export const AuthCard = styled.div`
 
 export const ToggleText = styled.p`
     margin-top: 15px;
-    color: #007bff;
+    color: #2d6a4f;
     cursor: pointer;
     text-decoration: underline;
     font-family: 'Roboto', sans-serif;
 
     &:hover {
-        color: #0056b3;
+        color: #2d6a4f;
         text-decoration: none;
     }
 `;

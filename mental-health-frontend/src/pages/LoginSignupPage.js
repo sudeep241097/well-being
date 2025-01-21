@@ -6,7 +6,7 @@ const LoginSignupPage = () => {
     return (
         <PageContainer>
             <Header>
-                <h1>Mental Health Platform</h1>
+                <h1 style={{ color: "#2d6a4f" }}>Mental Health Platform</h1>
                 <p>Your trusted companion for mental well-being</p>
             </Header>
             <AuthContainer />

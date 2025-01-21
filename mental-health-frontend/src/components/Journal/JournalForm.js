@@ -17,6 +17,7 @@ const JournalForm = () => {
   const [emotion, setEmotion] = useState("Neutral");
   const [error, setError] = useState("");
   const isEditing = !!id;
+  const [isFocused, setIsFocused] = useState(false); // Track focus state
 
   useEffect(() => {
     if (id) {
@@ -79,7 +80,7 @@ const JournalForm = () => {
   return (
     <JournalContainer>
       <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-        <h2 style={{ textAlign: "center", fontSize: "1.5rem", fontWeight: "bold", marginBottom: "20px" }}>
+        <h2 style={{ textAlign: "center", fontSize: "1.5rem", fontWeight: "bold", marginBottom: "20px",  color: "#2d6a4f" }}>
           {isEditing ? "Edit Journal" : "Create a New Journal"}
         </h2>
         <form onSubmit={handleSubmit}>
@@ -95,18 +96,20 @@ const JournalForm = () => {
           <FormGroup>
             <FormLabel>Content:</FormLabel>
             <textarea
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              required
-              rows="5"
-              style={{
-                width: "100%",
-                padding: "10px",
-                fontSize: "14px",
-                border: "1px solid #ccc",
-                borderRadius: "5px",
-              }}
-            ></textarea>
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+        onFocus={() => setIsFocused(true)} // Set focus state to true
+        onBlur={() => setIsFocused(false)} // Reset focus state to false
+        required
+        rows="5"
+        style={{
+          width: "100%",
+          padding: "10px",
+          fontSize: "14px",
+          border: `1px solid ${isFocused ? "#2d6a4f" : "#ccc"}`, // Dynamic border color
+          borderRadius: "5px",
+        }}
+      ></textarea>
           </FormGroup>
           <FormGroup>
             <FormLabel>Emotion:</FormLabel>

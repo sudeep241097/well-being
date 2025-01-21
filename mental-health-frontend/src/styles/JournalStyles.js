@@ -8,7 +8,7 @@ export const JournalContainer = styled.div`
 
 export const JournalHeader = styled.h1`
   text-align: center;
-  color: #4caf50;
+  color: #2d6a4f;
   margin-bottom: 20px;
   font-family: "Arial", sans-serif;
 `;
@@ -73,7 +73,7 @@ export const EmotionBadge = styled.span`
 
 export const Button = styled.button`
   padding: 10px 15px;
-  background-color: #4caf50;
+  background-color: #2d6a4f;
   color: white;
   border: none;
   border-radius: 5px;
@@ -106,7 +106,7 @@ export const FormInput = styled.input`
   border-radius: 5px;
 
   &:focus {
-    border-color: #4caf50;
+    border-color: #2d6a4f;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
     outline: none;
   }
@@ -114,7 +114,7 @@ export const FormInput = styled.input`
 
 export const SubmitButton = styled.button`
   padding: 12px 25px;
-  background: #4caf50;
+  background: #2d6a4f;
   color: white;
   border: none;
   border-radius: 8px;
