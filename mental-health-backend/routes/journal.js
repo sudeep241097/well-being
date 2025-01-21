@@ -23,33 +23,7 @@ router.post("/", authenticate, async (req, res) => {
   }
 });
 
-// Fetch all journal entries with pagination, search, and filters
-// router.get("/", authenticate, async (req, res) => {
-//   const { page = 1, limit = 10, search, emotion } = req.query;
-
-//   try {
-//     const filters = { userId: req.user.id, deletedAt: null };
-
-//     if (search) {
-//       filters.title = { $regex: search, $options: "i" }; // Case-insensitive search
-//     }
-//     if (emotion) {
-//       filters.emotion = emotion;
-//     }
-
-//     const totalEntries = await Journal.countDocuments(filters);
-
-//     const journals = await Journal.find(filters)
-//       .sort({ createdAt: -1 }) // Sort by most recent
-//       .skip((page - 1) * limit)
-//       .limit(parseInt(limit));
-
-//     res.status(200).json({ totalEntries, journals });
-//   } catch (err) {
-//     res.status(500).json({ error: "Error fetching journal entries" });
-//   }
-// });
-
+// Fetch all journal entries
 router.get("/", authenticate, async (req, res) => {
     const { page = 1, limit = 10, search, emotion } = req.query;
   
@@ -77,6 +51,7 @@ router.get("/", authenticate, async (req, res) => {
   });
 
 // Fetch a single journal entry
+// Doesnot delete the journal entry in the database
 router.get('/:id', authenticate, async (req, res) => {
     const { id } = req.params;
 
@@ -113,50 +88,50 @@ router.put("/:id", authenticate, async (req, res) => {
   }
 });
 
+// // Soft Delete a journal entry
 // router.delete("/:id", authenticate, async (req, res) => {
 //     const { id } = req.params;
   
 //     try {
-//       console.log(`Deleting Journal ID: ${id}, User ID: ${req.user.id}`); // Debug log
+//       console.log(`Deleting Journal ID: ${id}, User ID: ${req.user.id}`);
   
 //       const journal = await Journal.findOneAndUpdate(
-//         { _id: id, userId: req.user.id, deletedAt: null }, // Add deletedAt filter
+//         { _id: id, userId: req.user.id, deletedAt: null },
 //         { deletedAt: new Date() }
 //       );
   
 //       if (!journal) {
-//         console.log("Journal not found or already deleted."); // Debug log
+//         console.log("Journal not found or already deleted.");
 //         return res.status(404).json({ message: "Journal entry not found" });
 //       }
   
 //       res.status(200).json({ message: "Journal entry deleted successfully" });
 //     } catch (err) {
-//       console.error("Error deleting journal:", err); // Debug log
+//       console.error("Error deleting journal:", err);
 //       res.status(500).json({ error: "Error deleting journal entry" });
 //     }
 //   });
 
+//Hard Delete a journal entry
+// Permanently delete a journal entry and will delete the journal entry from the database
 router.delete("/:id", authenticate, async (req, res) => {
     const { id } = req.params;
-  
+
     try {
-      console.log(`Deleting Journal ID: ${id}, User ID: ${req.user.id}`);
-  
-      const journal = await Journal.findOneAndUpdate(
-        { _id: id, userId: req.user.id, deletedAt: null },
-        { deletedAt: new Date() }
-      );
-  
-      if (!journal) {
-        console.log("Journal not found or already deleted.");
+    const journal = await Journal.findOneAndDelete({
+        _id: id,
+        userId: req.user.id,
+    });
+
+    if (!journal) {
         return res.status(404).json({ message: "Journal entry not found" });
-      }
-  
-      res.status(200).json({ message: "Journal entry deleted successfully" });
-    } catch (err) {
-      console.error("Error deleting journal:", err);
-      res.status(500).json({ error: "Error deleting journal entry" });
     }
-  });
+
+    res.status(200).json({ message: "Journal entry permanently deleted" });
+    } catch (err) {
+    console.error("Error deleting journal:", err);
+    res.status(500).json({ error: "Error deleting journal entry" });
+    }
+});
 
 export default router;
